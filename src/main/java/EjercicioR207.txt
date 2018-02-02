@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+class EjercicioR207
+{
+  public String devolverEnOrden(ArrayList<String> palabras)
+  {
+    // Escribe tu código a continuación...
+    String aDevolver = "";
+    while (palabras.size() > 0) {
+      String palabraAOrdernar = palabras.get(0);
+      for (String palabra : palabras) {
+        if (palabra.length() >= palabraAOrdernar.length()) {
+          palabraAOrdernar = palabra;
+        }
+      }
+      palabras.remove(palabraAOrdernar); 
+      if (palabras.size() > 0) {
+        aDevolver += palabraAOrdernar + ",";
+      }
+      else if(palabras.size() == 0){
+        aDevolver += palabraAOrdernar;
+      }               
+    }
+    return aDevolver;
+  }
+}
+  
+  // A continuación puedes escribir otros métodos si lo necesitas...
